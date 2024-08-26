@@ -10,12 +10,11 @@ export default function Layout({ children }) {
   const router = useRouter();
   const { slug } = useParams();
   const { user, isUserLoading } = useContext(MainContext);
-
   useEffect(() => {
     if (
-      pathname === "/auth/login" ||
-      pathname === "/auth/signup" ||
-      pathname === "/auth/verify"
+      pathname === "/login" ||
+      pathname === "/signup" ||
+      pathname === "/verify"
     ) {
       return;
     }
@@ -33,11 +32,11 @@ export default function Layout({ children }) {
       !currentRoute?.roles?.includes(user?.role)
     ) {
       localStorage.clear();
-      router.replace("/auth/login");
+      router.replace("/login");
     }
   }, [pathname, user, isUserLoading, slug]);
 
-  if (isUserLoading) return <Spinner />;
+  // if (isUserLoading) return <Spinner />;
 
   return (
     <div>

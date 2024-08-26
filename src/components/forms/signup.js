@@ -87,7 +87,7 @@ export default function SignUpForm({ setIsOtpSent, setPhone }) {
           <div className="translate-y-4">
             <P className={"text-center text-sm font-medium tracking-wide"}>
               Already have an account?{" "}
-              <Link href={"/auth/login"} className="text-primary">
+              <Link href={"/login"} className="text-primary">
                 Login
               </Link>
             </P>
